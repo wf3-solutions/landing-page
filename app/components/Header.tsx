@@ -1,19 +1,38 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import MobileMenu from "./MobileMenu";
 import DesktopMenu from "./DesktopMenu";
 
 export default function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroHeight = document.getElementById("hero")?.offsetHeight || 0;
+      setScrolled(window.scrollY > heroHeight - 80); // ajuste se quiser
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <header
-      className=" fixed top-10 left-0 w-full z-50 
-                   px-4 lg:px-16 
-                   flex items-center justify-between"
+      className={`
+        fixed top-0 left-0 w-full z-50 
+        px-4 lg:px-16 
+        flex items-center justify-between
+        transition-all duration-300
+        ${scrolled ? "bg-primary shadow-lg py-2" : "bg-transparent py-6"}
+      `}
     >
       <div className="flex items-center justify-center">
         <Image src="/assets/WF-white.png" alt="Logo" width={60} height={60} />
-        <h1 className="text-2xl text-background ">Solutions</h1>
+        <h1 className="text-2xl text-white">Solutions</h1>
       </div>
+
       <DesktopMenu />
       <MobileMenu />
     </header>
