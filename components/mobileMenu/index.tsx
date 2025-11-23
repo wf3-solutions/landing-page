@@ -21,7 +21,7 @@ export default function MobileMenu() {
       <SheetTrigger asChild>
         <button
           aria-label="Menu"
-          className="relative h-10 w-10 flex flex-col justify-center items-center gap-[6px] md:hidden"
+          className="relative h-10 w-10 flex flex-col justify-center items-center gap-2 lg:hidden"
         >
           {/* Linha superior */}
           <motion.span
