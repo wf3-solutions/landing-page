@@ -1,6 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
-
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -65,10 +65,10 @@
   --popover-foreground: #1a1c1f;
 
   /* Cores principais da marca */
-  --primary: #a336f2; /* roxo neon */
+  --primary: #2e65e7;
   --primary-foreground: #ffffff;
 
-  --secondary: #23d1f3; /* turquesa neon */
+  --secondary: #ee8937;
   --secondary-foreground: #0a0f1f;
 
   /* Utilidades */
@@ -160,4 +160,8 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+html {
+  font-family: "Poppins", sans-serif;
 }
