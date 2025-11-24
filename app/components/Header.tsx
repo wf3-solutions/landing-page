@@ -11,7 +11,7 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const heroHeight = document.getElementById("hero")?.offsetHeight || 0;
-      setScrolled(window.scrollY > heroHeight - 80); // ajuste se quiser
+      setScrolled(window.scrollY > heroHeight - 80);
     };
 
     window.addEventListener("scroll", handleScroll);
