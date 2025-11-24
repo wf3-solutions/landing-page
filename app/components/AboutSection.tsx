@@ -7,7 +7,7 @@ export default function AboutSection() {
       id="about"
       className="w-full h-screen py-20 bg-background flex items-center justify-center"
     >
-      <div className="max-w-6xl w-full px-4 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div className=" w-full px-4 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div className="flex justify-center ">
           <Image
             src="/assets/about.jpg"
