@@ -20,6 +20,12 @@ export default function DesktopMenu() {
         Serviços
       </a>
       <a
+        onClick={() => scrollToId("clients")}
+        className="text-background cursor-pointer font-bold  hover:scale-125 transition-all ease-in-out"
+      >
+        Clientes
+      </a>
+      <a
         onClick={() => scrollToId("about")}
         className="text-background cursor-pointer font-bold  hover:scale-125 transition-all ease-in-out"
       >

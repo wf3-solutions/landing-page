@@ -1,5 +1,9 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function AboutSection() {
   return (
@@ -21,7 +25,7 @@ export default function AboutSection() {
           </div>
         </div>
 
-        <div className="col-span-3 flex flex-col text-center md:text-left">
+        <div className="col-span-3 flex flex-col text-center md:text-left gap-8">
           <p className="text-secondary font-bold text-[clamp(1rem,2vw,1.25rem)]">
             Sobre nós
           </p>
@@ -41,6 +45,15 @@ export default function AboutSection() {
             padrão elevado de entrega, ajudando empresas a evoluírem mais
             rápido.
           </p>
+
+          <Button
+            variant={"secondary"}
+            className="text-background font-bold h-14 p-2 text-lg"
+            onClick={() => window.open("https://google.com", "_blank")}
+          >
+            <FaWhatsapp size={30} />
+            Fale Conosco!
+          </Button>
         </div>
       </div>
     </section>

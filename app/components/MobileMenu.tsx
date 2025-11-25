@@ -21,6 +21,7 @@ export default function MobileMenu() {
   const menuItems = [
     { name: "Início", id: "hero" },
     { name: "Serviços", id: "services" },
+    { name: "Clientes", id: "clients" },
     { name: "sobre", id: "about" },
     { name: "Contato", id: "contact" },
   ];
@@ -55,7 +56,7 @@ export default function MobileMenu() {
       {/* Menu lateral */}
       <SheetContent
         side="top"
-        className="w-full p-6 backdrop-blur-xl bg-white/80 border-r border-gray-200"
+        className="w-full  p-6 backdrop-blur-xl bg-white/80 border-r border-gray-200 rounded-b-lg"
       >
         <SheetTitle className="mb-8 hidden" />
 
