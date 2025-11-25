@@ -4,6 +4,27 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
+import { motion, Variants } from "framer-motion";
+
+// Configuração da animação (Consistente com Hero e Contact)
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2, // Atraso entre a imagem e o texto
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
 export default function AboutSection() {
   return (
@@ -11,8 +32,18 @@ export default function AboutSection() {
       id="about"
       className="w-full min-h-screen bg-background flex items-center justify-center py-20"
     >
-      <div className="w-[90%] max-w-7xl grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
-        <div className="col-span-3 md:col-span-2 flex justify-center md:justify-start">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }} // Dispara quando 20% da seção estiver visível
+        className="w-[90%] max-w-7xl grid grid-cols-1 md:grid-cols-5 gap-12 items-center"
+      >
+        {/* Bloco 1: Imagem */}
+        <motion.div
+          variants={itemVariants}
+          className="col-span-3 md:col-span-2 flex justify-center md:justify-start"
+        >
           <div className="w-full max-w-[400px]">
             <Image
               src="/assets/about.png"
@@ -23,9 +54,13 @@ export default function AboutSection() {
               priority
             />
           </div>
-        </div>
+        </motion.div>
 
-        <div className="col-span-3 flex flex-col text-center md:text-left gap-8">
+        {/* Bloco 2: Texto e Botão */}
+        <motion.div
+          variants={itemVariants}
+          className="col-span-3 flex flex-col text-center md:text-left gap-8"
+        >
           <p className="text-secondary font-bold text-[clamp(1rem,2vw,1.25rem)]">
             Sobre nós
           </p>
@@ -48,14 +83,14 @@ export default function AboutSection() {
 
           <Button
             variant={"secondary"}
-            className="text-background font-bold h-14 p-2 text-lg"
-            onClick={() => window.open("https://google.com", "_blank")}
+            className="text-background font-bold h-14 p-2 text-lg hover:scale-105 transition-transform"
+            onClick={() => window.open("https://wa.me/5579999133217", "_blank")}
           >
             <FaWhatsapp size={30} />
             Fale Conosco!
           </Button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

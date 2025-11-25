@@ -29,7 +29,7 @@ export default function Footer() {
 
           <div className="flex gap-6 mt-4">
             <a
-              href="https://wa.me/559999999"
+              href="https://wa.me/5579999133217"
               target="_blank"
               className="flex items-center gap-3 hover:opacity-80 transition-all"
             >

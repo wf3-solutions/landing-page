@@ -31,7 +31,7 @@ export default function DesktopMenu() {
       >
         Sobre
       </a>
-      <Button variant={"secondary"} onClick={() => scrollToId("about")}>
+      <Button variant={"secondary"} onClick={() => scrollToId("contact")}>
         Entre em contato
       </Button>
     </nav>
