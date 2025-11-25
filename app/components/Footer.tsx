@@ -5,7 +5,7 @@ import { FaWhatsapp, FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="w-full text-background bg-gradient-to-r from-primary to-primary/90 pt-16 pb-10 mt-20">
+    <footer className="w-full text-background bg-linear-to-r from-primary to-primary/90 pt-16 pb-10 mt-20">
       <div className="w-[90%] max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="flex flex-col gap-3">
           <h3 className="font-semibold text-lg mb-2">Navegação</h3>
