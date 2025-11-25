@@ -14,18 +14,18 @@ export default function DesktopMenu() {
         Início
       </a>
       <a
-        onClick={() => scrollToId("about")}
-        className="text-background cursor-pointer font-bold  hover:scale-125 transition-all ease-in-out"
-      >
-        Sobre Nós
-      </a>
-      <a
         onClick={() => scrollToId("services")}
         className="text-background cursor-pointer font-bold  hover:scale-125 transition-all ease-in-out"
       >
         Serviços
       </a>
-      <Button variant={"secondary"} onClick={() => scrollToId("contact")}>
+      <a
+        onClick={() => scrollToId("about")}
+        className="text-background cursor-pointer font-bold  hover:scale-125 transition-all ease-in-out"
+      >
+        Sobre
+      </a>
+      <Button variant={"secondary"} onClick={() => scrollToId("about")}>
         Entre em contato
       </Button>
     </nav>

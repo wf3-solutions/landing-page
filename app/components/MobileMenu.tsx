@@ -20,8 +20,8 @@ export default function MobileMenu() {
 
   const menuItems = [
     { name: "Início", id: "hero" },
-    { name: "Sobre Nós", id: "about" },
-    { name: "Projetos", id: "projects" },
+    { name: "Serviços", id: "services" },
+    { name: "sobre", id: "about" },
     { name: "Contato", id: "contact" },
   ];
 
