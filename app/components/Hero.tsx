@@ -7,7 +7,7 @@ export default function HeroSection() {
       id="hero"
       className="
     relative
-    flex flex-col w-full h-screen items-center justify-center md:p-16 
+    flex flex-col w-full min-h-screen items-center justify-center md:p-16 
     bg-[url('/assets/hero.webp')] bg-cover bg-center bg-no-repeat
   "
     >

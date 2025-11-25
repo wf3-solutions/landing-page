@@ -9,7 +9,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="w-full h-screen bg-background flex items-center justify-center py-20"
+      className="w-full min-h-screen bg-background flex items-center justify-center py-20"
     >
       <div className="w-[90%] max-w-7xl grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
         <div className="col-span-3 md:col-span-2 flex justify-center md:justify-start">

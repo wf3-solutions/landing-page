@@ -7,20 +7,6 @@ export default function Footer() {
   return (
     <footer className="w-full text-background bg-gradient-to-r from-primary to-primary/90 pt-16 pb-10 mt-20">
       <div className="w-[90%] max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-        {/* LOGO + TEXTO */}
-        <div className="col-span-1">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-3xl font-extrabold">WF</span>
-            <span className="text-xl opacity-90">Solutions</span>
-          </div>
-
-          <p className="opacity-90 leading-relaxed">
-            Tecnologia moderna para criar soluções reais — sistemas, apps e
-            plataformas que impulsionam resultados.
-          </p>
-        </div>
-
-        {/* NAVEGAÇÃO */}
         <div className="flex flex-col gap-3">
           <h3 className="font-semibold text-lg mb-2">Navegação</h3>
 
@@ -38,7 +24,6 @@ export default function Footer() {
           </Link>
         </div>
 
-        {/* CONTATO */}
         <div className="flex flex-col gap-3">
           <h3 className="font-semibold text-lg mb-2">Contato</h3>
 
@@ -88,7 +73,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* LINHA FINAL */}
       <div className="text-center text-background/60 mt-10 pt-6 border-t border-background/20">
         © {new Date().getFullYear()} WF Solutions — Todos os direitos
         reservados.

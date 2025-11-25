@@ -13,7 +13,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="w-full bg-background h-screen flex items-center justify-center py-20"
+      className="w-full bg-background min-h-screen flex items-center justify-center py-20"
     >
       <div className="w-[90%] max-w-7xl flex flex-col items-center md:grid md:grid-cols-5 md:gap-12">
         <div className="col-span-2 flex flex-col justify-center text-center md:text-left mb-10 md:mb-0">

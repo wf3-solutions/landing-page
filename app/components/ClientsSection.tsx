@@ -21,7 +21,7 @@ export default function ClientsSection() {
   return (
     <section
       id="clients"
-      className="w-full px-6 py-20 flex flex-col items-center justify-center overflow-hidden"
+      className="w-full min-h-screen px-6 py-20 flex flex-col items-center justify-center overflow-hidden"
     >
       {/* Título */}
       <div className="text-center max-w-xl mb-12">
