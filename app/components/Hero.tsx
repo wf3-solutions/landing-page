@@ -82,7 +82,7 @@ export default function HeroSection() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 w-full max-w-7xl mx-auto flex flex-col gap-6 px-6 md:px-16 pt-32 md:pt-0"
+        className="relative z-10 w-full max-w-7xl mx-auto flex flex-col gap-6 px-6 md:px-16 pt-24 md:pt-0 pb-24 md:pb-0"
       >
         <motion.span
           variants={itemVariants}
@@ -124,7 +124,7 @@ export default function HeroSection() {
             transition={{ type: "spring", stiffness: 380, damping: 18 }}
             className="relative w-full sm:w-auto group"
           >
-            <span className="absolute inset-0 rounded-md bg-secondary blur-xl opacity-50 group-hover:opacity-80 transition-opacity" />
+            <span className="absolute inset-0 rounded-md bg-secondary blur-xl opacity-0 md:opacity-50 group-hover:opacity-80 transition-opacity" />
             <Button
               variant="secondary"
               onClick={() => scrollToId("contact")}
@@ -157,14 +157,17 @@ export default function HeroSection() {
 
         <motion.ul
           variants={itemVariants}
-          className="flex flex-wrap gap-x-6 gap-y-2 mt-4 justify-center md:justify-start"
+          className="flex flex-col md:flex-row md:flex-wrap gap-x-6 gap-y-1.5 mt-2 md:mt-4 items-center md:justify-start"
         >
           {trustBadges.map((badge) => (
             <li
               key={badge}
-              className="flex items-center gap-2 text-background/90 text-sm md:text-base font-medium"
+              className="flex items-center gap-2 text-background/90 text-xs md:text-base font-medium"
             >
-              <CheckCircle2 size={18} className="text-secondary shrink-0" />
+              <CheckCircle2
+                size={16}
+                className="text-secondary shrink-0 md:size-[18px]"
+              />
               {badge}
             </li>
           ))}
@@ -176,7 +179,7 @@ export default function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-background/70 z-10"
+        className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-background/70 z-10"
       >
         <span className="text-xs uppercase tracking-widest">Role para ver mais</span>
         <motion.div
