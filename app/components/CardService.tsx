@@ -1,18 +1,28 @@
-import { Card, CardDescription } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import React from "react";
 
 type CardServiceProps = {
   title: string;
+  description: string;
   icon: React.ReactNode;
 };
 
-export default function CardService({ title, icon }: CardServiceProps) {
+export default function CardService({
+  title,
+  description,
+  icon,
+}: CardServiceProps) {
   return (
-    <Card className="w-full  p-6 border-none shadow-xl hover:scale-110 transition-transform duration-300 flex items-center md:items-start  bg-card hover:bg-card/90">
-      <CardDescription className="flex items-center gap-2 text-lg font-bold">
+    <Card className="group h-full w-full p-6 border border-border/60 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-secondary/60 transition-all duration-300 bg-card flex flex-col gap-3">
+      <div className="w-12 h-12 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center group-hover:bg-secondary group-hover:text-secondary-foreground transition-colors">
         {icon}
+      </div>
+      <h3 className="text-lg font-bold text-foreground leading-tight">
         {title}
-      </CardDescription>
+      </h3>
+      <p className="text-sm text-muted-foreground leading-relaxed">
+        {description}
+      </p>
     </Card>
   );
 }

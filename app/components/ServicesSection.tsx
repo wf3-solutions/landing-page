@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import CardService from "./CardService";
 import {
   Lightbulb,
@@ -9,17 +8,15 @@ import {
   PanelsLeftBottom,
   PenTool,
   Smartphone,
+  Megaphone,
 } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 
-// Configuração da animação
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.1, // Stagger rápido para os cards aparecerem em sequência fluida
-    },
+    transition: { staggerChildren: 0.08 },
   },
 };
 
@@ -32,86 +29,91 @@ const itemVariants: Variants = {
   },
 };
 
+const services = [
+  {
+    icon: <PanelsLeftBottom size={24} />,
+    title: "Landing Pages",
+    description:
+      "Páginas de alta conversão para captar leads, vender produtos e validar campanhas.",
+  },
+  {
+    icon: <Smartphone size={24} />,
+    title: "Apps Mobile",
+    description:
+      "Aplicativos iOS e Android com experiência fluida e performance nativa.",
+  },
+  {
+    icon: <MonitorCog size={24} />,
+    title: "Sistemas Web",
+    description:
+      "PDVs, ERPs e plataformas internas sob medida para organizar a sua operação.",
+  },
+  {
+    icon: <Megaphone size={24} />,
+    title: "Tráfego Pago",
+    description:
+      "Campanhas no Meta e Google Ads para gerar oportunidades qualificadas todo dia.",
+  },
+  {
+    icon: <Network size={24} />,
+    title: "Integrações & APIs",
+    description:
+      "Conectamos seus sistemas, pagamentos e parceiros sem retrabalho ou planilha.",
+  },
+  {
+    icon: <PenTool size={24} />,
+    title: "UX/UI Design",
+    description:
+      "Interfaces claras, modernas e pensadas para guiar o usuário até a conversão.",
+  },
+  {
+    icon: <Lightbulb size={24} />,
+    title: "Consultoria Tech",
+    description:
+      "Apoio estratégico para escolher tecnologia, escopo e roadmap do seu produto.",
+  },
+];
+
 export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="w-full bg-background min-h-screen flex items-center justify-center py-20"
+      className="w-full bg-background py-24 flex items-center justify-center"
     >
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }} // Dispara assim que 10% da seção aparecer
-        className="w-[90%] max-w-7xl flex flex-col items-center md:grid md:grid-cols-5 md:gap-12"
+        viewport={{ once: true, amount: 0.1 }}
+        className="w-[90%] max-w-7xl flex flex-col gap-12"
       >
-        {/* Coluna da Esquerda: Textos */}
         <motion.div
           variants={itemVariants}
-          className="col-span-2 flex flex-col justify-center text-center md:text-left mb-10 md:mb-0"
+          className="flex flex-col items-center text-center max-w-2xl mx-auto gap-3"
         >
-          <p
-            className="text-secondary font-bold"
-            style={{ fontSize: "clamp(1rem, 1vw + 0.5rem, 1.25rem)" }}
-          >
+          <p className="text-secondary font-bold text-base md:text-lg">
             Serviços
           </p>
-
-          <h1
-            className="mb-6 font-bold leading-tight"
-            style={{ fontSize: "clamp(2rem, 3vw + 1rem, 3.5rem)" }}
-          >
-            Nosso expertise
-          </h1>
-
-          <p
-            className="text-muted-foreground"
-            style={{ fontSize: "clamp(1rem, 1vw + 0.5rem, 1.125rem)" }}
-          >
-            Desenvolvemos soluções completas para impulsionar seu negócio —
-            desde landing pages até sistemas complexos e aplicativos mobile.
+          <h2 className="font-bold leading-tight text-[clamp(2rem,3.5vw,3rem)]">
+            O que entregamos para você crescer
+          </h2>
+          <p className="text-muted-foreground text-base md:text-lg">
+            Tecnologia sob medida e marketing performado — tudo em um único
+            time, sem repasse e sem ficha técnica complicada.
           </p>
         </motion.div>
 
-        {/* Coluna da Direita: Grid de Cards */}
-        <motion.div
-          variants={containerVariants} // Reaplica o container para garantir o stagger nos cards internos
-          className="col-span-3 w-full grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6"
-        >
-          {/* Envolvemos cada CardService em um motion.div para animar individualmente */}
-          <motion.div variants={itemVariants}>
-            <CardService
-              icon={<PanelsLeftBottom size={28} />}
-              title="Landing Pages"
-            />
-          </motion.div>
-
-          <motion.div variants={itemVariants}>
-            <CardService icon={<Smartphone size={28} />} title="Apps Mobile" />
-          </motion.div>
-
-          <motion.div variants={itemVariants}>
-            <CardService icon={<MonitorCog size={28} />} title="Sistemas Web" />
-          </motion.div>
-
-          <motion.div variants={itemVariants}>
-            <CardService
-              icon={<Network size={28} />}
-              title="Integrações & APIs"
-            />
-          </motion.div>
-
-          <motion.div variants={itemVariants}>
-            <CardService icon={<PenTool size={28} />} title="UX/UI Design" />
-          </motion.div>
-
-          <motion.div variants={itemVariants}>
-            <CardService
-              icon={<Lightbulb size={28} />}
-              title="Consultoria Tech"
-            />
-          </motion.div>
-        </motion.div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {services.map((service) => (
+            <motion.div key={service.title} variants={itemVariants}>
+              <CardService
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+              />
+            </motion.div>
+          ))}
+        </div>
       </motion.div>
     </section>
   );

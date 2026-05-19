@@ -21,8 +21,10 @@ export default function MobileMenu() {
   const menuItems = [
     { name: "Início", id: "hero" },
     { name: "Serviços", id: "services" },
-    { name: "Clientes", id: "clients" },
-    { name: "sobre", id: "about" },
+    { name: "Como trabalhamos", id: "process" },
+    { name: "Projetos", id: "projects" },
+    { name: "Sobre", id: "about" },
+    { name: "FAQ", id: "faq" },
     { name: "Contato", id: "contact" },
   ];
 
@@ -68,7 +70,7 @@ export default function MobileMenu() {
           <div className="flex items-center mb-12">
             <Image
               src="/assets/wf-colored.png"
-              alt="Logo"
+              alt="WF3 Solutions"
               width={60}
               height={60}
             />

@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import Image from "next/image"
 import MobileMenu from "./MobileMenu"
 import DesktopMenu from "./DesktopMenu"
@@ -29,7 +29,7 @@ export default function Header() {
       `}
 		>
 			<div className="flex items-center justify-center">
-				<Image src="/assets/wf-white.png" alt="Logo" width={70} height={70} />
+				<Image src="/assets/wf-white.png" alt="WF3 Solutions" width={70} height={70} priority />
 			</div>
 
 			<DesktopMenu />

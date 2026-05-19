@@ -14,8 +14,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "WF3 Solutions",
-  description: "Soluções modernas e eficientes para o seu negócio.",
+  title: "WF3 Solutions — Desenvolvimento de Software e Tráfego Pago",
+  description:
+    "Criamos sites, apps e sistemas sob medida e geramos clientes com tráfego pago no Meta e Google Ads. Tecnologia e marketing no mesmo time.",
+  keywords: [
+    "desenvolvimento de software",
+    "landing page",
+    "aplicativo mobile",
+    "sistema web",
+    "tráfego pago",
+    "Meta Ads",
+    "Google Ads",
+    "WF3 Solutions",
+  ],
+  openGraph: {
+    title: "WF3 Solutions — Desenvolvimento de Software e Tráfego Pago",
+    description:
+      "Tecnologia que vende. Tráfego que traz cliente. Sites, apps e sistemas sob medida, com gestão de anúncios no mesmo time.",
+    type: "website",
+    locale: "pt_BR",
+    siteName: "WF3 Solutions",
+  },
 };
 
 export default function RootLayout({
@@ -24,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased  m-auto`}
       >
