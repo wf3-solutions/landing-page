@@ -13,7 +13,7 @@ export default function CardService({
   icon,
 }: CardServiceProps) {
   return (
-    <Card className="group h-full w-full p-6 border border-border/60 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-secondary/60 transition-all duration-300 bg-card flex flex-col gap-3">
+    <Card className="group h-full w-full p-6 border border-border/60 shadow-sm hover:shadow-2xl hover:border-secondary/60 transition-all duration-300 bg-card flex flex-col gap-3">
       <div className="w-12 h-12 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center group-hover:bg-secondary group-hover:text-secondary-foreground transition-colors">
         {icon}
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import CardService from "./CardService";
+import TiltCard from "./TiltCard";
 import {
   Lightbulb,
   MonitorCog,
@@ -78,14 +79,18 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="w-full bg-background py-24 flex items-center justify-center"
+      className="relative w-full bg-background py-24 flex items-center justify-center overflow-hidden"
     >
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-dot-pattern opacity-30 [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_75%)]"
+      />
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
-        className="w-[90%] max-w-7xl flex flex-col gap-12"
+        className="relative z-10 w-[90%] max-w-7xl flex flex-col gap-12"
       >
         <motion.div
           variants={itemVariants}
@@ -105,12 +110,14 @@ export default function ServicesSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {services.map((service) => (
-            <motion.div key={service.title} variants={itemVariants}>
-              <CardService
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-              />
+            <motion.div key={service.title} variants={itemVariants} className="h-full">
+              <TiltCard intensity={5}>
+                <CardService
+                  icon={service.icon}
+                  title={service.title}
+                  description={service.description}
+                />
+              </TiltCard>
             </motion.div>
           ))}
         </div>

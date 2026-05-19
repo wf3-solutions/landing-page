@@ -82,11 +82,19 @@ export default function ProcessSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+          <motion.div
+            aria-hidden
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+            className="hidden lg:block absolute top-12 left-0 right-0 h-px bg-linear-to-r from-secondary/0 via-secondary/60 to-secondary/0 origin-left"
+          />
           {steps.map((step, index) => (
             <motion.div
               key={step.title}
               variants={itemVariants}
-              className="relative flex flex-col gap-4 p-6 rounded-2xl bg-card border border-border/60 shadow-sm hover:shadow-md transition-shadow"
+              className="relative flex flex-col gap-4 p-6 rounded-2xl bg-card border border-border/60 shadow-sm hover:shadow-lg hover:border-secondary/40 hover:-translate-y-1 transition-all duration-300"
             >
               <div className="flex items-center justify-between">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">

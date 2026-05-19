@@ -51,14 +51,18 @@ export default function WhyUsSection() {
   return (
     <section
       id="why-us"
-      className="w-full bg-background py-24 flex items-center justify-center"
+      className="relative w-full bg-background py-24 flex items-center justify-center overflow-hidden"
     >
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-grid-pattern opacity-20 [mask-image:radial-gradient(ellipse_at_center,black_10%,transparent_70%)]"
+      />
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
-        className="w-[90%] max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+        className="relative z-10 w-[90%] max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
       >
         <motion.div
           variants={itemVariants}

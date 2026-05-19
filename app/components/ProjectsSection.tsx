@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import { ArrowUpRight, Receipt } from "lucide-react";
+import TiltCard from "./TiltCard";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -94,10 +95,10 @@ export default function ProjectsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {projects.map((project) => (
-            <motion.article
-              key={project.client}
-              variants={itemVariants}
-              className="group relative flex flex-col gap-5 p-6 rounded-2xl bg-card border border-border/60 hover:border-secondary/60 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            <motion.div key={project.client} variants={itemVariants} className="h-full">
+              <TiltCard intensity={6}>
+            <article
+              className="group relative h-full flex flex-col gap-5 p-6 rounded-2xl bg-card border border-border/60 hover:border-secondary/60 hover:shadow-2xl transition-all duration-300"
             >
               <div className="flex items-start justify-between gap-3">
                 <div className="w-16 h-16 rounded-xl bg-background flex items-center justify-center overflow-hidden border border-border/40">
@@ -143,7 +144,9 @@ export default function ProjectsSection() {
                   </span>
                 ))}
               </div>
-            </motion.article>
+            </article>
+              </TiltCard>
+            </motion.div>
           ))}
         </div>
       </motion.div>
