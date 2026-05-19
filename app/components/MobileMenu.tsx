@@ -82,17 +82,14 @@ export default function MobileMenu() {
           transition={{ duration: 0.25 }}
           className="flex flex-col gap-6"
         >
-          <div className="flex items-center gap-3">
+          <div className="flex items-center">
             <Image
               src="/assets/wf-colored.png"
               alt="WF3 Solutions"
-              width={48}
-              height={48}
+              width={56}
+              height={56}
               className="object-contain"
             />
-            <span className="text-xl font-bold text-foreground tracking-tight">
-              WF3 <span className="text-primary">Solutions</span>
-            </span>
           </div>
 
           <nav className="flex flex-col gap-1">
